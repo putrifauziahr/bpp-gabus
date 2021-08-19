@@ -17,6 +17,6 @@ class KelompokTani extends Model
 
     public function gapoktanRef()
     {
-        return $this->belongsTo('App\Model\Gapoktan', 'id_gapoktan');
+        return $this->belongsTo(Gapoktan::class, 'id_gapoktan');
     }
 }
