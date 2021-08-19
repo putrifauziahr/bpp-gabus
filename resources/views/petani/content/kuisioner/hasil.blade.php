@@ -67,7 +67,7 @@
                                 var myChart = new Chart(ctx, {
                                     type: 'bar',
                                     data: {
-                                        labels: ["Tangibles", "Reliability", "Responsiveness", "Assurance", "Emphaty"],
+                                        labels: ["Bukti Fisik", "Kehandalan", "Daya Tanggap", "Jaminan", "Empati"],
                                         datasets: [{
                                             label: '# of Votes',
                                             data: [
@@ -124,7 +124,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Hasil Akhir Kegiatan " {{$penyuluhans->kegiatan}} - {{$penyuluhans->tanggal}} "</h5>
+                            <h5>Kesimpulan " {{$penyuluhans->kegiatan}} - {{$penyuluhans->tanggal}} "</h5>
                         </div>
 
                         <div class="card-block table-border-style">
@@ -135,15 +135,19 @@
                                             <th>No</th>
                                             <th>Kategori</th>
                                             <th>Nilai GAP</th>
+                                            <th>Kondisi</th>
                                             <th>Kesimpulan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th scope="row">1</th>
-                                            <td>Tangibles</td>
+                                            <td>Bukti Fisik</td>
                                             <td>{{$tangp - $tang}}</td>
                                             @if($tangp - $tang >= "0")
+                                            <td>
+                                                Kondisi Layanan Berkualitas dan Memuaskan
+                                            </td>
                                             <td>
                                                 <p>
                                                     Pelayanan yang diberikan sudah sesuai harapan petani,
@@ -151,25 +155,27 @@
                                                 </p>
                                             </td>
                                             @else($tangp - $tang < "0" ) <td>
-                                                <p>
-                                                    1. Terkait Kebersihan, kenyaman dan keamanan ruang kegiatan penyuluhan berlangsung, harus ditingkat dan diperbaiki
-                                                </p>
-                                                <p>
-                                                    2. Perlengkapan yang digunakan dalam kegiatan penyuluhan harus lengkap dan memadai agar tidak
-                                                    kesulitan saat melakukan kegiatan penyuluhan
-                                                </p>
-                                                <p>
-                                                    3. Kelengkapan dan kesiapan alat peraga penyuluh harus dipersiapan secara matang, agar dapat berfungsi dengan baik
-                                                    saat digunakan pada kegiatan penyuluhan
-                                                </p>
+                                                Kondisi Layanan Tidak Berkualitas dan Memuaskan
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        Diperlukan perbaikan pada hal-hal yang terkait dengan sarana dan prasarana seperti :
+                                                        <br>
+                                                        tampilan gedung, fasilitas fisik, pendukung, perlengkapan dan penampilan petugas penyuluhan.
+                                                    </p>
                                                 </td>
                                                 @endif
                                         </tr>
+
+
                                         <tr>
                                             <th scope="row">2</th>
-                                            <td>Reliability</td>
+                                            <td>Kehandalan</td>
                                             <td>{{$relip - $reli}}</td>
                                             @if($relip - $reli >= "0")
+                                            <td>
+                                                Kondisi Layanan Berkualitas dan Memuaskan
+                                            </td>
                                             <td>
                                                 <p>
                                                     Pelayanan yang diberikan sudah sesuai harapan petani,
@@ -177,29 +183,28 @@
                                                 </p>
                                             </td>
                                             @else($relip - $reli < "0" ) <td>
-                                                <p>
-                                                    1. Kesesuaikan kegiatan dengan waktu yang dijadwalkan sesuai, penyelenggaraan penyuluhan harus
-                                                    disiplin,
-                                                    <br>
-                                                    agar segala sesuatu berlangsung sesuai dengan jadwal yang sudah dilakukan dan tidak membuang-buang waktu
-                                                </p>
-                                                <p>
-                                                    2. Dalam memberikan penyuluhan, petani mengharapkan penyuluh merupakan orang yang kompeten dibidangnya dan sudah berpengalaman
-                                                </p>
-                                                <p>
-                                                    3. Penyuluh menyampaikan materi penyuluhan pertanian dengan baik
-                                                </p>
-                                                <p>
-                                                    4. Materi penyuluhan yang ditawarkan sesuai dengan yang dibutuhkan petani dan sesuai
-                                                </p>
+                                                Kondisi Layanan Tidak Berkualitas dan Memuaskan
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        Diperlukan perbaikan pada kemampuan penyedia layanan memberikan
+                                                        <br>
+                                                        layanan yang dijanjinkan dengan segera, akurat, dan memuaskan.
+                                                    </p>
                                                 </td>
                                                 @endif
                                         </tr>
+
+
+
                                         <tr>
                                             <th scope="row">3</th>
-                                            <td>Responsiveness</td>
+                                            <td>Daya Tanggap</td>
                                             <td>{{$responp - $respon}}</td>
                                             @if($responp - $respon >= "0")
+                                            <td>
+                                                Kondisi Layanan Berkualitas dan Memuaskan
+                                            </td>
                                             <td>
                                                 <p>
                                                     Pelayanan yang diberikan sudah sesuai harapan petani,
@@ -207,20 +212,27 @@
                                                 </p>
                                             </td>
                                             @else($responp - $respon < "0" ) <td>
-                                                <p>
-                                                    1. Petugas penyuluhan cepat tanggap dalam memberikan pelayanan
-                                                </p>
-                                                <p>
-                                                    2. Penyuluh menerima pertanyaan dan secara langsung menjawab dan mampu menjawab pertanyaan dengan benar
-                                                </p>
+                                                Kondisi Layanan Tidak Berkualitas dan Memuaskan
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        Diperlukan perbaikan terkait dengan para petugas penyuluhan
+                                                        <br>yang memberikan jaminan bahwa mereka bisa memberikan layanan dengan baik.
+                                                    </p>
                                                 </td>
                                                 @endif
                                         </tr>
+
+
+
                                         <tr>
                                             <th scope="row">4</th>
-                                            <td>Assurance</td>
+                                            <td>Jaminan</td>
                                             <td>{{$assup - $assu}}</td>
                                             @if($assup - $assu >= "0")
+                                            <td>
+                                                Kondisi Layanan Berkualitas dan Memuaskan
+                                            </td>
                                             <td>
                                                 <p>
                                                     Pelayanan yang diberikan sudah sesuai harapan petani,
@@ -228,19 +240,26 @@
                                                 </p>
                                             </td>
                                             @else($assup - $assu < "0" ) <td>
-                                                <p>
-                                                    1. Penyuluh sudah berpengalaman dalam memberikan penyuluhan pertanian
-                                                </p>
-                                                <p>2. Lingkungan penyuluhan terasa nyaman, tentram dan aman</p>
-                                                <p>3. Penyuluh memiliki kemampuan dan pengetahuan dalam memberikan penyuluhan pertanian</p>
+                                                Kondisi Layanan Tidak Berkualitas dan Memuaskan
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        Perlu dilakukan perbaikan terkait dengan pengetahuan dan kecakapan petugas penyuluhan
+                                                        <br> yang memberikan jaminan bahwa mereka bisa memberikan layanan dengan baik.
+                                                        <br>Seperti penyuluh sudah berpengalaman dalam memberikan penyuluhan,
+                                                        <br> penguasaan materi dengan baik dan memiliki kemampuan serta pengetahuan dalam memberikan penyuluhan
+                                                    </p>
                                                 </td>
                                                 @endif
                                         </tr>
                                         <tr>
                                             <th scope="row">5</th>
-                                            <td>Emphaty</td>
+                                            <td>Empati</td>
                                             <td>{{$emp - $em}}</td>
                                             @if($emp - $em >= "0")
+                                            <td>
+                                                Kondisi Layanan Berkualitas dan Memuaskan
+                                            </td>
                                             <td>
                                                 <p>
                                                     Pelayanan yang diberikan sudah sesuai harapan petani,
@@ -248,10 +267,14 @@
                                                 </p>
                                             </td>
                                             @else($emp - $em < "0" ) <td>
-                                                <p>1. Petugas penyuluhan memberikan perhatian saat kegiatan penyuluhan</p>
-                                                <p>2. Keramahan, kesopanan dan sikap petugas penyuluhan dalam memberikan pelayanan</p>
-                                                <p>3. Petugas penyuluhan berkomunikasi dengan Bahasa yang mudah dimengerti</p>
-                                                <p>4. Petugas penyuluhan meminta maaf atas pelayanan yang kurang baik</p>
+                                                Kondisi Layanan Tidak Berkualitas dan Memuaskan
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        Diperlukan perbaikan terkait dengan para petugas penyuluhan mampu
+                                                        <br> menjalin komunikasi interpersonal dan memahami kebutuhan petani.
+                                                        <br>Seperti perhatian, kesopanan, keramahan dan komunikasi petugas penyuluhan
+                                                    </p>
                                                 </td>
                                                 @endif
                                         </tr>
