@@ -21,7 +21,7 @@ class UserPetaniController extends Controller
     {
         if (session('berhasil_login')) {
             $pen = Penyuluhan::count();
-            return view('petani.content.index', compact('pen', 'penyu', 'penyul'));
+            return view('petani.content.index', compact('pen'));
         } else {
             return redirect('/petani/login');
         }
@@ -33,7 +33,7 @@ class UserPetaniController extends Controller
     {
         if (session('berhasil_login')) {
             $pen = Penyuluhan::count();
-            return view('petani.content.index', compact('pen', 'penyu', 'penyul'));
+            return view('petani.content.index', compact('pen'));
         } else {
             return view('petani/content/login');
         }
