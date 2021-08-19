@@ -8,6 +8,7 @@ use App\model\KelompokTani;
 use App\model\Kuisioner;
 use App\model\Penyuluhan;
 use App\model\Petani;
+use App\model\Gapoktan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
