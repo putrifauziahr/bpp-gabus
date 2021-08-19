@@ -15,11 +15,11 @@ class Fuzzyfikasi extends Model
 
     public function hasilRef()
     {
-        return $this->belongsTo('App\Model\HasilKuisioner', 'id_hasil');
+        return $this->belongsTo(HasilKuisioner::class, 'id_hasil');
     }
 
     public function defuzzyRef()
     {
-        return $this->hasMany('App\Model\Defuzzyfikasi', 'id_fuzzy');
+        return $this->hasMany(Defuzzyfikasi::class, 'id_fuzzy');
     }
 }

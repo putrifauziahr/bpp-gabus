@@ -14,12 +14,12 @@ class HasilKuisioner extends Model
 
     public function Penyuluhans()
     {
-        return $this->belongsTo('App\Model\Penyuluhan', 'id_penyuluhan');
+        return $this->belongsTo(Penyuluhan::class, 'id_penyuluhan');
     }
 
     public function Petanis()
     {
-        return $this->belongsTo('App\Model\Petani', 'id_petani');
+        return $this->belongsTo(Petani::class, 'id_petani');
     }
 
     public function Kuisioners()

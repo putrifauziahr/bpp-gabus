@@ -12,7 +12,7 @@ class KelompokTani extends Model
 
     public function Petanis()
     {
-        return $this->hasMany('App\Model\Petani', 'id_poktan');
+        return $this->hasMany(Petani::class, 'id_poktan');
     }
 
     public function gapoktanRef()

@@ -12,6 +12,6 @@ class Desa extends Model
 
     public function Petanis()
     {
-        return $this->hasMany('App\Model\Petani', 'kode_desa');
+        return $this->hasMany(Petani::class, 'kode_desa');
     }
 }

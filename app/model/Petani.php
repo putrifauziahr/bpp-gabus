@@ -13,12 +13,12 @@ class Petani extends Model
     //Relasi sebagai sandaran, bergantung
     public function KelompokTanis()
     {
-        return $this->belongsTo('App\Model\KelompokTani', 'id_poktan');
+        return $this->belongsTo(KelompokTani::class, 'id_poktan');
     }
 
     public function Desa()
     {
-        return $this->belongsTo('App\Model\Desa', 'kode_desa');
+        return $this->belongsTo(Desa::class, 'kode_desa');
     }
 
     //Ada tabel lain yang berelasi dengan id petani

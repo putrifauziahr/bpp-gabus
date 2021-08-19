@@ -12,6 +12,6 @@ class Kategori extends Model
 
     public function Kuisioners()
     {
-        return $this->hasMany('App\Model\Kuisioner', 'id_kategori');
+        return $this->hasMany(Kuisioner::class, 'id_kategori');
     }
 }

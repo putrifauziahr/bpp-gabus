@@ -13,6 +13,6 @@ class Riwayat extends Model
     //ID_KATEGORI BERELASI DENGAN ID_PENYULUHAN TABEL PENYULUHAN (BERGANTUNG)
     public function Penyuluhans()
     {
-        return $this->belongsTo('App\Model\Penyuluhan', 'id_penyuluhan');
+        return $this->belongsTo(Penyuluhan::class, 'id_penyuluhan');
     }
 }

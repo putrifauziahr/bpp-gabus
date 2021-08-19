@@ -12,6 +12,6 @@ class Gapoktan extends Model
 
     public function poktanRef()
     {
-        return $this->hasMany('App\Model\KelompokTani', 'id_gapoktan');
+        return $this->hasMany(KelompokTani::class, 'id_gapoktan');
     }
 }

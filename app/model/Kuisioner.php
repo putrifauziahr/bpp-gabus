@@ -13,11 +13,11 @@ class Kuisioner extends Model
     //ID_KATEGORI BERELASI DENGAN ID_KATEGORI TABEL KATEGORI (BERGANTUNG)
     public function Kategoris()
     {
-        return $this->belongsTo('App\Model\Kategori', 'id_kategori');
+        return $this->belongsTo(Kategori::class, 'id_kategori');
     }
 
     public function HasilKuisioners()
     {
-        return $this->hasMany('App\Model\HasilKuisioner', 'id_kuis');
+        return $this->hasMany(HasilKuisioner::class, 'id_kuis');
     }
 }

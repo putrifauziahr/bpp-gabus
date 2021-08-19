@@ -14,6 +14,6 @@ class Defuzzyfikasi extends Model
 
     public function fuzzyfikasiRef()
     {
-        return $this->belongsTo('App\Model\Fuzzyfikasi', 'id_fuzzy');
+        return $this->belongsTo(Fuzzyfikasi::class, 'id_fuzzy');
     }
 }

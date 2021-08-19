@@ -12,11 +12,11 @@ class Penyuluhan extends Model
 
     public function HasilKuisioners()
     {
-        return $this->hasMany('App\Model\HasilKuisioner', 'id_penyuluhan');
+        return $this->hasMany(HasilKuisioner::class, 'id_penyuluhan');
     }
 
     public function Riwayats()
     {
-        return $this->hasMany('App\Model\Riwayat', 'id_penyuluhan');
+        return $this->hasMany(Riwayat::class, 'id_penyuluhan');
     }
 }
