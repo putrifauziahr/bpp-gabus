@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\model\Penyuluhan;
 
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
-    $penyuluhan = Penyuluhan::where('status', "Belum Dilaksanakan");
+    $penyuluhan = DB::table('penyuluhans')->where('status', '=', 'Belum Dilaksanakan')->get();
     return view('petani/content/beranda/home', compact('penyuluhan'));
 });
 

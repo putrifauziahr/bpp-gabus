@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\model\Penyuluhan;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,7 @@ class UserBerandaController extends Controller
 {
     public function showPenyuluhan()
     {
-        $penyuluhan = Penyuluhan::where('status', "Belum Dilaksanakan");
+        $penyuluhan = DB::table('penyuluhans')->where('status', '=', 'Belum Dilaksanakan')->get();
         return view('petani/content/beranda/penyuluhan', compact('penyuluhan'));
     }
 
